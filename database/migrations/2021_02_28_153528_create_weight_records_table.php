@@ -16,8 +16,9 @@ class CreateWeightRecordsTable extends Migration
         Schema::create('weight_records', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->timestamps();
             $table->unsignedDecimal('weight_record',4,1);
+            $table->string('unit');
+            $table->timestamps();
         });
     }
 
